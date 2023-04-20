@@ -1,17 +1,12 @@
 import './App.css';
 import {Component} from "react";
-import Calendar from "./components/Calendar";
+import SignInForm from "./components/SignInForm";
 
 class App extends Component {
     render() {
         return (
             <>
-                <header>
-                    <h1>Calendar</h1>
-                </header>
-                <main>
-                    <Calendar/>
-                </main>
+             <SignInForm/>
             </>)
     }
 }

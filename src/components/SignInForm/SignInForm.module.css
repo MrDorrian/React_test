@@ -1,0 +1,20 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    border: 1px solid seagreen;
+    width: 200px;
+}
+
+.input {
+    padding: 5px 10px;
+    margin: 5px;
+}
+
+.valid {
+    border: 2px solid greenyellow;
+}
+
+.invalid {
+    border: 2px solid red;
+}
