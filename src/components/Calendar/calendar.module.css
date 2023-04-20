@@ -1,0 +1,22 @@
+.wrapperBlock {
+    width: 500px;
+    height: 300px;
+    background-color: #009990;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+}
+
+.leftBlock {
+    height: 100%;
+    width: 50%;
+    color: #ffffff;
+    background-color: #37cec3;
+}
+
+.rightBlock {
+    height: 100%;
+    width: 50%;
+    background-color: #ffffff;
+}
+
