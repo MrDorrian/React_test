@@ -30,7 +30,7 @@ export class StopWatch extends Component {
     };
 
     componentDidMount() {
-        // this.start();
+        this.start();
     }
 
     componentWillUnmount() {
