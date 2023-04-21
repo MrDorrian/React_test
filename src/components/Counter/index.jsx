@@ -5,26 +5,30 @@ class Counter extends Component {
         super(props);
         this.state = {
             count: 0,
-            step: 1
+            step: 1,
+            isAdd: true
         }
     }
 
-    addCount = () => {
-        const {count, step} = this.state;
-        this.setState({count: count + step});
-    }
-
-    removeCount = () => {
-        const {count, step} = this.state;
-        this.setState({count: count - step});
+    countFunc = () => {
+        const {count, step, checkbox} = this.state;
+        if (checkbox) {
+            this.setState({count: count + step});
+        } else {
+            this.setState({count: count - step});
+        }
     }
 
     changeStep = ({target: {value}}) => {
         this.setState({step: +value});
     }
 
+    changeCheckbox = ({target: {checked}}) => {
+        this.setState({isAdd: checked});
+    }
+
     render() {
-        const {count, step} = this.state;
+        const {count, step, isAdd} = this.state;
         return (
             <>
                 <div>
@@ -32,8 +36,11 @@ class Counter extends Component {
                     <div>Add + {step}</div>
                     <input type="number" onChange={this.changeStep}/>
                 </div>
-                <button onClick={this.addCount}>Add</button>
-                <button onClick={this.removeCount}>Remove</button>
+                <div>
+                    Add/Remove
+                    <input type="checkbox" checked={isAdd} onChange={this.changeCheckbox}/>
+                </div>
+                <button onClick={this.countFunc}>Add</button>
             </>
         );
     }
