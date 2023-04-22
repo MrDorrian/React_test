@@ -8,7 +8,7 @@ class App extends Component {
             <>
                 <FlexContainer justifyContent={'space-around'} alignItems={'center'}>
                     <div>Test</div>
-                    <div>Test</div>`
+                    <div>Test</div>
                     <div>Test</div>
                     <div>Test</div>
                     <div>Test</div>
