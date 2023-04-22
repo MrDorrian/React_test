@@ -23,4 +23,4 @@ class Aloha extends Component {
     }
 }
 
-export default Aloha;
+export default Aloha

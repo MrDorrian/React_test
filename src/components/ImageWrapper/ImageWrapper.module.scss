@@ -1,0 +1,9 @@
+.wrapper {
+  > img {
+    width: inherit;
+    height: inherit;
+    object-fit: cover;
+    object-position: center;
+    overflow: hidden;
+  }
+}
