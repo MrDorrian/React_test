@@ -1,20 +1,15 @@
 import './App.css';
-import {Component} from "react";
-import {FlexContainer} from "./components/FlexContainer";
+import { Component } from 'react';
+import UserLoader from './components/UsersLoader';
 
 class App extends Component {
-    render() {
-        return (
-            <>
-                <FlexContainer justifyContent={'space-around'} alignItems={'center'}>
-                    <div>Test</div>
-                    <div>Test</div>
-                    <div>Test</div>
-                    <div>Test</div>
-                    <div>Test</div>
-                </FlexContainer>
-            </>)
-    }
+  render() {
+    return (
+      <>
+        <UserLoader />
+      </>
+    );
+  }
 }
 
 export default App;
