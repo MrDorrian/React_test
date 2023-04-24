@@ -1,12 +1,12 @@
 import './App.css';
 import { Component } from 'react';
-import UserLoader from './components/UsersLoader';
+import ResizeWindow from './components/ResizeWindow';
 
 class App extends Component {
   render() {
     return (
       <>
-        <UserLoader />
+        <ResizeWindow></ResizeWindow>
       </>
     );
   }
