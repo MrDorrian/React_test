@@ -1,59 +1,31 @@
 import './App.css';
-import React, { Component } from 'react';
-import { Route, BrowserRouter, Routes, Link } from 'react-router-dom';
-import Calendar from './components/Calendar';
-import CounterPage from './pages/Counter';
-import UserList from './components/UserList';
-import DataProvider from './components/DataProvider';
+import { Component } from 'react';
+import { Header } from './components/TestTaskPage/Header';
+import { SideBarUser } from './components/TestTaskPage/SidebarUser';
+import { UserContext } from './context/UserContext';
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      user: {
+        id: 1,
+        name: 'Max',
+        lastName: 'Takanyan',
+        url: 'https://img.freepik.com/free-vector/cute-bad-cat-wearing-suit-sunglasses-with-baseball-bat-cartoon-icon-illustration-animal-fashion-icon-concept-isolated-flat-cartoon-style_138676-2170.jpg?w=2000',
+      },
+    };
+  }
+
   render() {
+    const { user } = this.state;
     return (
-      <BrowserRouter>
-        <nav>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/calendar">Calendar</Link>
-            </li>
-            <li>
-              <Link to="/provider">Provider</Link>
-            </li>
-            <li>
-              <Link to="/user-list">User-List</Link>
-            </li>
-            <li>
-              <Link to="/counter">Counter</Link>
-            </li>
-          </ul>
-        </nav>
-        <Routes>
-          <Route index element={<Calendar />} />
-          <Route
-            path="/provider"
-            element={
-              <DataProvider url={'/users.json'}>
-                {(state) => {
-                  return (
-                    <ol>
-                      {state.map((u) => (
-                        <li key={u.id}>
-                          {' '}
-                          {u.firstName} {u.lastName}
-                        </li>
-                      ))}
-                    </ol>
-                  );
-                }}
-              </DataProvider>
-            }
-          ></Route>
-          <Route path="/user-list" element={<UserList />} />
-          <Route path="/counter" element={<CounterPage />} />
-        </Routes>
-      </BrowserRouter>
+      <UserContext.Provider value={user}>
+        <div>
+          <Header />
+          <SideBarUser />
+        </div>
+      </UserContext.Provider>
     );
   }
 }
