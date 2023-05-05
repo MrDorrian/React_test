@@ -1,8 +1,6 @@
 import './App.css';
 import { Component } from 'react';
-import { Header } from './components/TestTaskPage/Header';
-import { SideBarUser } from './components/TestTaskPage/SidebarUser';
-import { UserContext } from './context/UserContext';
+import SignInForm from "./components/forms/SignUpForm";
 
 class App extends Component {
   constructor(props) {
@@ -18,15 +16,7 @@ class App extends Component {
   }
 
   render() {
-    const { user } = this.state;
-    return (
-      <UserContext.Provider value={user}>
-        <div>
-          <Header />
-          <SideBarUser />
-        </div>
-      </UserContext.Provider>
-    );
+    return <SignInForm />;
   }
 }
 

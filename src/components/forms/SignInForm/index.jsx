@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import styles from './SignInForm.module.css';
 import cx from 'classnames';
 
-class SignInForm extends Component {
+class SignUpForm extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -44,4 +44,4 @@ class SignInForm extends Component {
     }
 }
 
-export default SignInForm;
+export default SignUpForm;
