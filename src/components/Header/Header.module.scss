@@ -1,0 +1,23 @@
+.container {
+  width: 100vw;
+  height: 50px;
+  position: relative;
+  display: flex;
+}
+.signIn {
+  width: 100px;
+  position: absolute;
+  margin: 10px 10px 0 0;
+  right: 0;
+  .button {
+    color: #4433f1;
+    text-decoration: underline;
+    font-weight: 700;
+    cursor: pointer;
+  }
+}
+.img {
+  margin: 10px 0 0 10px;
+  width: 100px;
+  height: inherit;
+}
