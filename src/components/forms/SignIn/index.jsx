@@ -13,7 +13,7 @@ export const SignInForm = (props) => {
       onSubmit={props.onSubmit}
       validationSchema={SIGN_IN_SCHEMA}
     >
-      {(formProps) => (
+      {formProps => (
         <Form>
           <div className={styles.form}>
             <div className={styles.label}>Email address</div>

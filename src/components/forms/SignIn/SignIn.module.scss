@@ -1,3 +1,4 @@
+@import 'src/utils/global.module';
 .form {
   background: #fff;
   box-shadow: 0 8px 40px rgba(0, 0, 0, 0.04);
@@ -8,8 +9,13 @@
 }
 .label {
   margin: 10px 0;
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: capitalize;
 }
+
 .button {
+  cursor: pointer;
   color: #fff;
   background: linear-gradient(271.19deg, #4433f1 0%, #628eff 100%),
     linear-gradient(271.19deg, #307df6 0%, #14bbbf 100%), #ffffff;
@@ -19,4 +25,50 @@
   height: 50px;
   border-radius: 16px;
   font-size: 22px;
+}
+.checkboxName {
+  font-size: 14px;
+  font-weight: 700;
+}
+.inline {
+  display: flex;
+  div {
+    width: 50%;
+  }
+  div:first-child {
+    margin-right: 20px;
+  }
+}
+.contextBox {
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 16px;
+  padding: 16px;
+  min-height: 100px;
+  h5 {
+    font-size: 16px;
+    font-weight: 700;
+  }
+  span {
+    font-size: 16px;
+    color: #828282;
+  }
+}
+
+.radioWrapper {
+  display: flex;
+  label:first-child {
+    margin-right: 20px;
+  }
+  label {
+    position: relative;
+
+    input {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+    }
+  }
+}
+.error {
+  @extend %error;
 }

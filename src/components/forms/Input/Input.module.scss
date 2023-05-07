@@ -1,3 +1,4 @@
+@import 'src/utils/global.module';
 .input {
   box-sizing: border-box;
   width: 100%;
@@ -20,18 +21,10 @@
 .invalidInput {
   border: 2px solid red;
 }
+
 .container {
 }
 
 .error {
-  position: absolute;
-  z-index: 99;
-  background: white;
-  border-radius: 16px;
-  height: 20px;
-  margin-top: 5px;
-  padding: 5px;
-}
-.error:first-letter {
-  text-transform: capitalize;
+  @extend %error;
 }

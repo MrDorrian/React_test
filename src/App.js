@@ -23,6 +23,7 @@ class App extends Component {
         <Routes>
           <Route index element={<SignIn />} />
           <Route path="/signUp" element={<SignUp />} />
+          <Route path="/signIn" element={<SignIn />} />
         </Routes>
       </BrowserRouter>
     );

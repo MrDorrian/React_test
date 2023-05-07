@@ -13,7 +13,12 @@ const Input = (props) => {
   return (
     <>
       <label className={styles.container}>
-        <input {...field} className={classNames} {...rest} />
+        <input
+          {...field}
+          className={classNames}
+          {...rest}
+          placeholder={field.name}
+        />
         <ErrorMessage
           component="div"
           name={field.name}

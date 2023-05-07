@@ -1,7 +1,7 @@
 import styles from './Header.module.scss';
-import { Link } from "react-router-dom";
-export const Header = () => {
-
+import { Link } from 'react-router-dom';
+export const Header = (props) => {
+  const { isSignIn } = props;
   return (
     <div className={styles.container}>
       <div className={styles.img}>
@@ -11,8 +11,15 @@ export const Header = () => {
         />
       </div>
       <div className={styles.signIn}>
-        <Link to="/signUp" className={styles.button}>Sign Up</Link>
-        <Link to="/signIn" className={styles.button}>Sign In</Link>
+        {isSignIn ? (
+          <Link to="/signUp" className={styles.button}>
+            Sign Up
+          </Link>
+        ) : (
+          <Link to="/signIn" className={styles.button}>
+            Login
+          </Link>
+        )}
       </div>
     </div>
   );
