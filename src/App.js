@@ -1,8 +1,6 @@
 import './App.css';
 import { Component } from 'react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { SignIn } from './pages/SignIn';
-import { SignUp } from './pages/SignUp';
+import { StopWatch } from "./pages/StopWatch";
 
 class App extends Component {
   constructor(props) {
@@ -18,15 +16,7 @@ class App extends Component {
   }
 
   render() {
-    return (
-      <BrowserRouter>
-        <Routes>
-          <Route index element={<SignIn />} />
-          <Route path="/signUp" element={<SignUp />} />
-          <Route path="/signIn" element={<SignIn />} />
-        </Routes>
-      </BrowserRouter>
-    );
+    return <StopWatch />;
   }
 }
 
