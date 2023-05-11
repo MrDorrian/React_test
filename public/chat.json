@@ -1,0 +1,46 @@
+{
+  "messages": [
+    {
+      "id": 1,
+      "body": "text",
+      "authorId": 1
+    },
+    {
+      "id": 2,
+      "body": "text",
+      "authorId": 2
+    },
+    {
+      "id": 3,
+      "body": "text",
+      "authorId": 2
+    },
+    {
+      "id": 4,
+      "body": "text",
+      "authorId": 1
+    },
+    {
+      "id": 5,
+      "body": "text",
+      "authorId": 1
+    },
+    {
+      "id": 6,
+      "body": "text",
+      "authorId": 2
+    }
+  ],
+  "users": [
+    {
+      "id": 2,
+      "name": "John Smith",
+      "imageSrc": "http://"
+    },
+    {
+      "id": 1,
+      "name": "Jane Smith",
+      "imageSrc": "http://"
+    }
+  ]
+}

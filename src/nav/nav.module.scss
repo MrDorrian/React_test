@@ -1,0 +1,39 @@
+$width: 320px;
+
+.wrapper {
+  background-color: dodgerblue;
+  position: fixed;
+  z-index: 100;
+  width: $width;
+  height: 100vh;
+  top: 0;
+  bottom: 0;
+  left: -$width;
+  transition: left ease-in-out 0.5s;
+  color: white;
+  font-size: 20px;
+
+  ul {
+    margin: 0;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+}
+.open {
+  left: 0;
+}
+.close {
+}
+.open_button {
+  cursor: pointer;
+}
+
+.close_button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+}

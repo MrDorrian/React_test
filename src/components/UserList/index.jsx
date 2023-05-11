@@ -1,6 +1,6 @@
-import { useData } from '../../hooks/userList';
-import { getUsers } from '../../api/getUsers';
-import { useMouse } from '../../hooks/useMouse';
+import { useData } from 'hooks/userList';
+import { getUsers } from 'api/getUsers';
+import { useMouse } from "hooks/useMouse";
 
 export const UserList = () => {
   const { data: users, error, isFetching } = useData(getUsers);

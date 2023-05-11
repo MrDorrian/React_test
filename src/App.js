@@ -1,6 +1,14 @@
 import './App.css';
-import { UserList } from "./components/UserList";
+import { Navigation } from './nav';
+import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
+import React from 'react';
 
 export const App = () => {
-  return <UserList />;
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Navigation />} />
+      </Routes>
+    </BrowserRouter>
+  );
 };
