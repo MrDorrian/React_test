@@ -1,41 +1,32 @@
-import React, { Component } from 'react';
+import React, { useEffect, useState } from 'react';
+import { getUsers } from '../../api/getUsers';
 
-class UserList extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      users: [],
-      isFetching: false,
-      error: null,
-    };
-  }
-  componentDidMount() {
-    this.setState({ isFetching: true });
-    fetch('/users.json')
-      .then((res) => res.json())
-      .then((users) => this.setState({ users, isFetching: false }))
-      .catch((e) => this.setState({ error: e, isFetching: false }));
-  }
+export const UserList = () => {
+  const [users, setUsers] = useState([]);
+  const [error, setError] = useState(null);
+  const [isFetching, setIsFetching] = useState(false);
 
-  render() {
-    const { users, isFetching, error } = this.state;
-    if (isFetching) {
-      return <div>Fetching</div>;
-    }
-    if (error) {
-      return <div>{error}</div>;
-    }
-    return (
+  useEffect(() => {
+    setIsFetching(true);
+    getUsers()
+      .then((data) => {
+        const { results } = data;
+        setUsers(results);
+      })
+      .catch((err) => {
+        setError(err);
+        console.log(error);
+      })
+      .finally(() => setIsFetching(false));
+  }, []);
+
+  return (
+    <div>
       <ol>
-        {users.map((u) => (
-          <li key={u.id}>
-            {' '}
-            {u.firstName} {u.lastName}
-          </li>
-        ))}
+        {users.map((u, i) => {
+          return <li key={i}>{JSON.stringify(u)}</li>;
+        })}
       </ol>
-    );
-  }
-}
-
-export default UserList;
+    </div>
+  );
+};
