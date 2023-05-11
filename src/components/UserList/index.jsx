@@ -1,30 +1,17 @@
-import React, { useEffect, useState } from 'react';
+import { useData } from '../../hooks/userList';
 import { getUsers } from '../../api/getUsers';
+import { useMouse } from '../../hooks/useMouse';
 
 export const UserList = () => {
-  const [users, setUsers] = useState([]);
-  const [error, setError] = useState(null);
-  const [isFetching, setIsFetching] = useState(false);
-
-  useEffect(() => {
-    setIsFetching(true);
-    getUsers()
-      .then((data) => {
-        const { results } = data;
-        setUsers(results);
-      })
-      .catch((err) => {
-        setError(err);
-        console.log(error);
-      })
-      .finally(() => setIsFetching(false));
-  }, []);
-
+  const { data: users, error, isFetching } = useData(getUsers);
+  const coordinates = useMouse();
   return (
     <div>
+      <h1>{JSON.stringify(coordinates)}</h1>
       <ol>
+        {isFetching && <li>Loading...</li>}
         {users.map((u, i) => {
-          return <li key={i}>{JSON.stringify(u)}</li>;
+          return <li key={u.login.uuid}>{JSON.stringify(u)}</li>;
         })}
       </ol>
     </div>
