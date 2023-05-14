@@ -13,26 +13,15 @@ export const SignInForm = (props) => {
       onSubmit={props.onSubmit}
       validationSchema={SIGN_IN_SCHEMA}
     >
-      {formProps => (
-        <Form>
-          <div className={styles.form}>
-            <div className={styles.label}>Email address</div>
-            <Field name="email">
-              {(fieldProps) => <Input {...fieldProps} />}
-            </Field>
-            <div className={styles.label}>Password</div>
-            <Field name="password">
-              {(fieldProps) => <Input {...fieldProps} type='password'/>}
-            </Field>
-          </div>
-          <Field
-            type="submit"
-            value="Log In"
-            disabled={!formProps.isValid}
-            className={styles.button}
-          />
-        </Form>
-      )}
+      <Form>
+        <div className={styles.form}>
+          <div className={styles.label}>Email address</div>
+          <Input name="email" />
+          <div className={styles.label}>Password</div>
+          <Input name="password" type="password" />
+        </div>
+        <Field type="submit" value="Log In" className={styles.button} />
+      </Form>
     </Formik>
   );
 };

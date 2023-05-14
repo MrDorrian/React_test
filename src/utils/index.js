@@ -36,3 +36,10 @@ export const SIGN_UP_SCHEMA = yup.object({
     .required()
     .oneOf([yup.ref('password'), null], 'Passwords must match'),
 });
+
+export const TODO_VALIDATION_SCHEMA = yup.object({
+  text: yup
+    .string()
+    .matches(/^[a-zA-Z0-9]{3,15}$/, 'Enter a valid text')
+    .required(),
+});

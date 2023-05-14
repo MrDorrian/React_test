@@ -1,11 +1,10 @@
 import React from 'react';
-import { ErrorMessage } from 'formik';
+import { ErrorMessage, useField } from 'formik';
 import styles from './Input.module.scss';
 import cx from 'classnames';
 
 const Input = (props) => {
-  const { field, meta, form, ...rest } = props;
-
+  const [field, meta, helpers] = useField(props.name);
   const classNames = cx(styles.input, {
     [styles.validInput]: meta.touched && !meta.error,
     [styles.invalidInput]: meta.touched && meta.error,
@@ -16,7 +15,7 @@ const Input = (props) => {
         <input
           {...field}
           className={classNames}
-          {...rest}
+          {...props}
           placeholder={field.name}
         />
         <ErrorMessage

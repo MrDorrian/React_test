@@ -1,0 +1,33 @@
+.buttonAdd,
+.invalidForm {
+  background-color: #b07eea;
+  border-radius: 5px;
+  border: 1px solid #b07eea;
+  padding: 10px 20px;
+  position: absolute;
+  bottom: -25px;
+  right: 130px;
+  cursor: pointer;
+  color: white;
+  font-size: 18px;
+  text-transform: uppercase;
+  &:active {
+    border: 1px solid white;
+  }
+}
+.invalidForm {
+  background-color: #828282;
+  cursor: not-allowed;
+}
+.inputField {
+  width: 100%;
+  height: 30px;
+  border-radius: 5px;
+  border: 1px solid #b07eea;
+  margin: 15px 0;
+}
+
+.errorInput {
+  text-transform: capitalize;
+  color: Red;
+}
